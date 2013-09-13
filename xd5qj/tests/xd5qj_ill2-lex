@@ -1,0 +1,8 @@
+BEGIN;
+TURN 45;
+/Go 47.234;
+t = 3;
+GO t;
+j = 3%t;
+//Another example for undefined characters
+END;

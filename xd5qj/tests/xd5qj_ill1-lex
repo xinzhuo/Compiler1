@@ -1,0 +1,9 @@
+BEGIN;
+TURN 45;
+GO 100;
+*GO;
+JUMP?;
+//Some regular operators are not defined;
+JUMP 3.245;
+//This is a trial run
+END;

@@ -1,0 +1,8 @@
+BEGIN;
+TURN 45;
+GO 100;
+JUMP 3.5;
+t = 3;
+GO t;
+//This is a trial run
+END;

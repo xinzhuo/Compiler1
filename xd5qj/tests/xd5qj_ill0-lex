@@ -1,0 +1,6 @@
+BEGAN;
+/*Other types is comment can't be well-handled*/
+TURN 45;
+JUMP 3.245;
+//This is a trial run
+END;
