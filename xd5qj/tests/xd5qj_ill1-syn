@@ -1,0 +1,31 @@
+//Name: XINZHUO DONG; ID: xd5qj
+
+//Alter base on the legal test case
+VAR alpha;
+VAR beta;
+VAR gamma;
+VAR sigma;
+VAR random;
+
+alpha = 30 * 2 + 6.78;
+GO cos alpha;
+
+random = alpha/2.3;
+
+//Violations of the statement structure defined in turtle.y would also cause errors
+
+//Wrong statement for the token "FOR" 
+FOR beta = 2/2 STEP 2 STEP 3
+TO 20
+DO
+BEGIN
+	BEGIN 
+	JUMP random;
+	GO sqrt random;
+	random = 3*2;
+	TURN 4;
+	//Missing corresponding CCLOSE(END)
+END;
+
+sigma = (alpha * 3.2) + (sin 3 - 5.0;
+//Missing the CLOSE
