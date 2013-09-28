@@ -30,7 +30,7 @@
 #define LEFTBRACKET 282
 #define RIGHTBRACKET 283
 #define IF 284
-#define THEN 285
+#define then 285
 #define ELSE 286
 #define WHILE 287
 
