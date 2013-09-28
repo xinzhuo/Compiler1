@@ -65,13 +65,13 @@
      THEN = 283,
      ELSE = 284,
      WHILE = 285,
-     LEFTBRACKET = 286,
-     RIGHTBRACKET = 287,
-     LARGER = 288,
-     LARGEREQUAL = 289,
-     SMALLER = 290,
-     SMALLEREQUAL = 291,
-     EQUAL = 292,
+     LEFTBRKT = 286,
+     RIGHTBRKT = 287,
+     GREATER = 288,
+     GREATEREQUAL = 289,
+     LESS = 290,
+     LESSEQUAL = 291,
+     EQUALS = 292,
      NOTEQUAL = 293
    };
 #endif
@@ -83,7 +83,7 @@ typedef union YYSTYPE
 {
 
 /* Line 2068 of yacc.c  */
-#line 7 "turtle_xd5qj.y"
+#line 6 "turtle_xd5qj.y"
  int i; node *n; double d;
 
 

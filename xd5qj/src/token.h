@@ -1,4 +1,3 @@
-
 /* Tokens.  */
 #define GO 258
 #define TURN 259
@@ -10,11 +9,9 @@
 #define DO 265
 #define COPEN 266
 #define CCLOSE 267
-
 #define SIN 268
 #define COS 269
 #define SQRT 270
-
 #define FLOAT 271
 #define ID 272
 #define NUMBER 273
@@ -27,18 +24,16 @@
 #define CLOSE 280
 #define ASSIGN 281
 
-#define LEFTBRACKET 282
-#define RIGHTBRACKET 283
-#define IF 284
-#define THEN 285
-#define ELSE 286
-#define WHILE 287
-
-#define LARGER 288
-#define LARGEREQUAL 289
-#define SMALLER 290
-#define SMALLEREQUAL 291
-#define EQUAL 292
+#define IF 282
+#define ELSE 284
+#define WHILE 285
+#define LEFTBRKT 286
+#define RIGHTBRKT 287
+#define GREATER 288
+#define GREATEREQUAL 289
+#define LESS 290
+#define LESSEQUAL 291
+#define EQUALS 292
 #define NOTEQUAL 293
 
 
@@ -47,4 +42,3 @@ typedef union YYSTYPE
 { int i; node *n; double d;}
         YYSTYPE;
 YYSTYPE yylval;
-

@@ -1,4 +1,3 @@
-
 %{
 #include <stdio.h>
 #include "symtab.h"
@@ -18,9 +17,8 @@
 %type <n> decl
 %type <n> decllist
 
-%token IF ELSE WHILE LEFTBRACKET RIGHTBRACKET
-%token LARGER LARGEREQUAL SMALLER SMALLEREQUAL EQUAL NOTEQUAL
-
+%token IF THEN ELSE WHILE LEFTBRKT RIGHTBRKT 
+%token GREATER GREATEREQUAL LESS LESSEQUAL EQUALS NOTEQUAL
 %%
 program: head decllist stmtlist tail;
 
@@ -37,7 +35,6 @@ decllist: decllist decl;
 
 decl: VAR ID SEMICOLON { printf("/tlt%s 0 def\n",$2->symbol);} ;
 
-
 stmtlist: ;
 stmtlist: stmtlist stmt ;
 
@@ -53,6 +50,25 @@ stmt: FOR ID ASSIGN expr
 	     stmt {printf("} for\n");};
 
 stmt: COPEN stmtlist CCLOSE;	 
+
+stmt: IF OPEN compare CLOSE {printf("{ ");}
+      LEFTBRKT stmtlist RIGHTBRKT {printf("} ");}
+      goelse ;
+
+stmt: WHILE {printf("{ ");} 
+      OPEN compare CLOSE {printf("{} {exit} ifelse \n");}
+      LEFTBRKT stmtlist RIGHTBRKT {printf("} loop \n");};
+
+goelse:  {printf("if \n");};
+goelse: ELSE {printf("{ ");}
+      LEFTBRKT stmtlist RIGHTBRKT {printf("} ifelse \n");};
+
+compare: expr EQUALS expr {printf("eq\n");};
+compare: expr NOTEQUAL expr {printf("ne\n");};
+compare: expr LESS expr {printf("lt\n");};
+compare: expr LESSEQUAL expr {printf("le\n");};
+compare: expr GREATER expr {printf("gt\n");};
+compare: expr GREATEREQUAL expr {printf("ge\n");};
 
 expr: expr PLUS term { printf("add ");};
 expr: expr MINUS term { printf("sub ");};
@@ -75,24 +91,7 @@ atomic: NUMBER {printf("%d ",$1);};
 atomic: FLOAT {printf("%f ",$1);};
 atomic: ID {printf("tlt%s ", $1->symbol);};
 
-stmt: IF OPEN compare CLOSE {printf("{ ");}
-         LEFTBRACKET stmt RIGHTBRACKET {printf("} ");}
-         endif;
 
-stmt: WHILE {printf("{ ");}
-            OPEN compare CLOSE {printf("{} {exit} ifelse \n");}
-            LEFTBRACKET stmtlist RIGHTBRACKET {printf("} loop \n");};
-
-endif: {printf("if \n");};
-endif: ELSE  {printf("{ ");}
-       LEFTBRACKET stmtlist RIGHTBRACKET {printf("} ifelse \n");};
-
-compare: expr EQUAL expr {printf("eq\n");};
-compare: expr NOTEQUAL {printf("ne\n");};
-compare: expr LARGER expr {printf("gt\n");};
-compare: expr LARGEREQUAL expr {printf("ge\n");};
-compare: expr SMALLER expr expr {printf("lt\n");};
-compare: expr SMALLEREQUAL expr {printf("le\n");};
 
 
 %%
@@ -105,5 +104,3 @@ int main(void)
 {   yyparse();
     return 0;
 }
-
-

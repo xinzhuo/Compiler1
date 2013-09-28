@@ -379,15 +379,15 @@ struct yy_trans_info
 	};
 static yyconst flex_int16_t yy_accept[83] =
     {   0,
-        0,    0,   40,   38,    2,    2,   38,   21,   22,   19,
-       17,   18,   20,   37,   16,   31,   23,   29,   38,   38,
+        0,    0,   40,   38,    2,    2,   38,   25,   26,   23,
+       21,   22,   24,   37,   20,   32,   13,   30,   38,   38,
        38,   38,   38,   38,   38,   38,   38,   38,   38,   35,
-       35,   35,   24,   25,   34,    1,    0,   37,   32,   33,
-       30,    0,   10,    0,    0,    0,    3,   26,    0,    0,
+       35,   35,   27,   28,   34,    1,    0,   37,   31,   33,
+       29,    0,   10,    0,    0,    0,    3,   14,    0,    0,
         9,    0,    0,    0,   35,   35,   35,   35,    1,   36,
-        0,    0,   12,    7,    0,    0,    0,    5,    0,   14,
-       13,   35,    0,   27,    6,    8,    4,    0,   15,   11,
-       28,    0
+        0,    0,   12,    7,    0,    0,    0,    5,    0,   18,
+       17,   35,    0,   15,    6,    8,    4,    0,   19,   11,
+       16,    0
     } ;
 
 static yyconst flex_int32_t yy_ec[256] =
@@ -512,7 +512,7 @@ int yy_flex_debug = 0;
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
 #line 1 "turtle_xd5qj.l"
-#line 3 "turtle_xd5qj.l"
+#line 2 "turtle_xd5qj.l"
 #include "symtab.h"
 #include "token.h"
 #line 519 "lex.yy.c"
@@ -702,7 +702,7 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
     
-#line 9 "turtle_xd5qj.l"
+#line 7 "turtle_xd5qj.l"
 
 
 #line 709 "lex.yy.c"
@@ -790,178 +790,178 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 11 "turtle_xd5qj.l"
+#line 9 "turtle_xd5qj.l"
 ;
 	YY_BREAK
 case 2:
 /* rule 2 can match eol */
 YY_RULE_SETUP
-#line 12 "turtle_xd5qj.l"
-;
+#line 10 "turtle_xd5qj.l"
+; 
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 14 "turtle_xd5qj.l"
+#line 12 "turtle_xd5qj.l"
 return GO;
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 15 "turtle_xd5qj.l"
+#line 13 "turtle_xd5qj.l"
 return TURN; 
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 16 "turtle_xd5qj.l"
+#line 14 "turtle_xd5qj.l"
 return VAR;
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 17 "turtle_xd5qj.l"
+#line 15 "turtle_xd5qj.l"
 return JUMP;
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 18 "turtle_xd5qj.l"
+#line 16 "turtle_xd5qj.l"
 return FOR;
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 19 "turtle_xd5qj.l"
+#line 17 "turtle_xd5qj.l"
 return STEP;
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 20 "turtle_xd5qj.l"
+#line 18 "turtle_xd5qj.l"
 return TO;
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 21 "turtle_xd5qj.l"
+#line 19 "turtle_xd5qj.l"
 return DO;
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 22 "turtle_xd5qj.l"
+#line 20 "turtle_xd5qj.l"
 return COPEN;
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 23 "turtle_xd5qj.l"
+#line 21 "turtle_xd5qj.l"
 return CCLOSE;
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 25 "turtle_xd5qj.l"
-return SIN;
+#line 22 "turtle_xd5qj.l"
+return ASSIGN;
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 26 "turtle_xd5qj.l"
-return COS;
+#line 24 "turtle_xd5qj.l"
+return IF;
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 27 "turtle_xd5qj.l"
-return SQRT;
+#line 25 "turtle_xd5qj.l"
+return ELSE;
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 29 "turtle_xd5qj.l"
-return SEMICOLON;
+#line 26 "turtle_xd5qj.l"
+return WHILE;
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 30 "turtle_xd5qj.l"
-return PLUS;
+#line 29 "turtle_xd5qj.l"
+return SIN;
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 31 "turtle_xd5qj.l"
-return MINUS;
+#line 30 "turtle_xd5qj.l"
+return COS;
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 32 "turtle_xd5qj.l"
-return TIMES;
+#line 31 "turtle_xd5qj.l"
+return SQRT;
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
 #line 33 "turtle_xd5qj.l"
-return DIV;
+return SEMICOLON;
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
 #line 34 "turtle_xd5qj.l"
-return OPEN;
+return PLUS;
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
 #line 35 "turtle_xd5qj.l"
-return CLOSE;
+return MINUS;
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
 #line 36 "turtle_xd5qj.l"
-return ASSIGN;
+return TIMES;
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 38 "turtle_xd5qj.l"
-return LEFTBRACKET;
+#line 37 "turtle_xd5qj.l"
+return DIV;
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 39 "turtle_xd5qj.l"
-return RIGHTBRACKET;
+#line 38 "turtle_xd5qj.l"
+return OPEN;
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 41 "turtle_xd5qj.l"
-return IF;
+#line 39 "turtle_xd5qj.l"
+return CLOSE;
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 42 "turtle_xd5qj.l"
-return ELSE;
+#line 41 "turtle_xd5qj.l"
+return LEFTBRKT;
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 43 "turtle_xd5qj.l"
-return WHILE;
+#line 42 "turtle_xd5qj.l"
+return RIGHTBRKT;
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 45 "turtle_xd5qj.l"
-return LARGER;
+#line 43 "turtle_xd5qj.l"
+return GREATEREQUAL;
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 46 "turtle_xd5qj.l"
-return LARGEREQUAL;
+#line 44 "turtle_xd5qj.l"
+return GREATER;
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 47 "turtle_xd5qj.l"
-return SMALLER;
+#line 45 "turtle_xd5qj.l"
+return LESSEQUAL;
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 48 "turtle_xd5qj.l"
-return SMALLEREQUAL;
+#line 46 "turtle_xd5qj.l"
+return LESS;
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 49 "turtle_xd5qj.l"
-return EQUAL;
+#line 47 "turtle_xd5qj.l"
+return EQUALS;
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 50 "turtle_xd5qj.l"
+#line 48 "turtle_xd5qj.l"
 return NOTEQUAL;
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 53 "turtle_xd5qj.l"
+#line 51 "turtle_xd5qj.l"
 { yylval.n = lookup(yytext); 
                   if (yylval.n==NULL)
 		    yylval.n = insert(yytext);
@@ -970,22 +970,22 @@ YY_RULE_SETUP
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 59 "turtle_xd5qj.l"
+#line 57 "turtle_xd5qj.l"
 yylval.d = atof(yytext);  return FLOAT;
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 60 "turtle_xd5qj.l"
+#line 58 "turtle_xd5qj.l"
 yylval.i = atoi(yytext);  return NUMBER;
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 62 "turtle_xd5qj.l"
+#line 60 "turtle_xd5qj.l"
 fprintf(stderr,"Unexpected character %c (%2X)\n",yytext[0],yytext[0]);
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 64 "turtle_xd5qj.l"
+#line 62 "turtle_xd5qj.l"
 ECHO;
 	YY_BREAK
 #line 992 "lex.yy.c"
@@ -1986,7 +1986,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 64 "turtle_xd5qj.l"
+#line 62 "turtle_xd5qj.l"
 
 
 

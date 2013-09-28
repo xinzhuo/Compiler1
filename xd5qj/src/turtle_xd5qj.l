@@ -1,15 +1,13 @@
-
 %{
 #include "symtab.h"
 #include "token.h"
 %}
 
-ID [a-z]+
 
 %%
 
 \/\/.*          ;
-[[:space:]]     ;
+[[:space:]]     ; 
 
 GO              return GO;
 TURN            return TURN; 
@@ -21,6 +19,12 @@ TO              return TO;
 DO              return DO;
 BEGIN           return COPEN;
 END             return CCLOSE;
+=               return ASSIGN;
+
+IF              return IF;
+ELSE            return ELSE;
+WHILE           return WHILE;
+
 
 sin             return SIN;
 cos             return COS;
@@ -33,21 +37,15 @@ sqrt            return SQRT;
 \/              return DIV;
 \(              return OPEN;
 \)              return CLOSE;
-=               return ASSIGN;
 
-\{		return LEFTBRACKET;
-\}		return RIGHTBRACKET;
-
-IF 		return IF;
-ELSE		return ELSE;
-WHILE		return WHILE;
-
-\>		return LARGER;
-\>=		return LARGEREQUAL;
-\<		return SMALLER;
-\<=		return SMALLEREQUAL;
-\==		return EQUAL;
-\!=		return NOTEQUAL;
+\{              return LEFTBRKT;
+\}              return RIGHTBRKT;
+\>=             return GREATEREQUAL;
+\>              return GREATER;
+\<=             return LESSEQUAL;
+\<              return LESS;
+==              return EQUALS;
+!=              return NOTEQUAL;
 
 
 [a-z]+          { yylval.n = lookup(yytext); 

@@ -22,5 +22,5 @@ turtle: turtle_xd5qj.tab.o lex.yy.o symtab.c
 	gcc lex.yy.o turtle_xd5qj.tab.o symtab.c -lfl -o turtle
 
 clean:
-	rm -f turtle lex.* turtle_xd5qj.tab.* *.o
+	rm -f turtle lex.* turtle_xd5qj.tab.*
 
