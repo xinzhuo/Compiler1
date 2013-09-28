@@ -1,10 +1,7 @@
 VAR myvar;
 
 myvar=4;
-VAR i;
 
-//should be eight accending lines
-i=0;
 // should draw a rectangle
 IF(myvar==4) {
     GO 40;
@@ -38,15 +35,4 @@ GO 30;
 TURN 120;
 GO 30;
 TURN 120;
-}
-TURN 240;
-
-
-TURN 90;
-WHILE(i<8) {
-    GO 20;
-    TURN 270;
-    JUMP 5;
-    TURN 90;
-    i=i+1;
 }
