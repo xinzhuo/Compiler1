@@ -1,0 +1,21 @@
+//created a interesting figure
+VAR counter;
+VAR sides;
+VAR angles;
+
+sides=3;
+
+JUMP 580;
+TURN 90;
+JUMP 300;
+
+WHILE(sides<=22){
+  angles=180-(sides-2)*180/sides;
+  counter=0;
+  WHILE(counter<sides){
+    GO 80;
+    TURN angles;
+    counter=counter+1;
+  }
+  sides=sides+1;
+}
