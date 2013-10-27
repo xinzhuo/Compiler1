@@ -45,6 +45,19 @@ void Operator::PrintChildren(int indentLevel) {
     printf("%s",tokenString);
 }
 
+
+PostfixExpr::PostfixExpr(Expr *l, Operator *o)
+  : Expr(Join(l->GetLocation(), o->GetLocation())) {
+    Assert(l != NULL && o != NULL);
+    (left=l)->SetParent(this);        
+    (op=o)->SetParent(this);
+}
+
+void PostfixExpr::PrintChildren(int indentLevel) {
+    left->Print(indentLevel + 1);
+    op->Print(indentLevel + 1);   
+}
+
 CompoundExpr::CompoundExpr(Expr *l, Operator *o, Expr *r) 
   : Expr(Join(l->GetLocation(), r->GetLocation())) {
     Assert(l != NULL && o != NULL && r != NULL);
@@ -66,18 +79,6 @@ void CompoundExpr::PrintChildren(int indentLevel) {
    op->Print(indentLevel+1);
    right->Print(indentLevel+1);
 }
-
-PostfixExpr::PostfixExpr(Expr *l, Operator *o)
-  : Expr(Join(l->GetLocation(), o->GetLocation())) {
-    Assert(l != NULL && o != NULL);
-    (left=l)->SetParent(this);				
-    (op=o)->SetParent(this);
-}
-
-void PostfixExpr::PrintChildren(int indentLevel) {
-    left->Print(indentLevel + 1);
-    op->Print(indentLevel + 1);		
-}
  
 ArrayAccess::ArrayAccess(yyltype loc, Expr *b, Expr *s) : LValue(loc) {
     (base=b)->SetParent(this); 
@@ -88,7 +89,8 @@ void ArrayAccess::PrintChildren(int indentLevel) {
     base->Print(indentLevel+1);
     subscript->Print(indentLevel+1, "(subscript) ");
   }
-     
+   
+
 FieldAccess::FieldAccess(Expr *b, Identifier *f) 
   : LValue(b? Join(b->GetLocation(), f->GetLocation()) : *f->GetLocation()) {
     Assert(f != NULL); // b can be be NULL (just means no explicit base)
@@ -98,13 +100,13 @@ FieldAccess::FieldAccess(Expr *b, Identifier *f)
 }
 
 
-  void FieldAccess::PrintChildren(int indentLevel) {
+void FieldAccess::PrintChildren(int indentLevel) {
     if (base) base->Print(indentLevel+1);
     field->Print(indentLevel+1);
-  }
+}
 
 Call::Call(yyltype loc, Expr *b, Identifier *f, List<Expr*> *a) : Expr(loc)  {
-    Assert(f != NULL && a != NULL); // b can be be NULL (just means no explicit base)
+    Assert(f != NULL && a != NULL); 
     base = b;
     if (base) base->SetParent(this);
     (field=f)->SetParent(this);
